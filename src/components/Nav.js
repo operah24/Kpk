@@ -7,7 +7,7 @@ const Nav = () => {
      <h2 className="logo">HNG</h2>
       <ul className="links">
         <li>
-          <NavLink exact to="/about" className="about">
+          <NavLink exact to="#" className="about">
             About
           </NavLink>
         </li>

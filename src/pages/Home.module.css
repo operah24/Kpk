@@ -1,0 +1,32 @@
+.landing {
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 30%;
+    height: 40%;
+    box-shadow: 1px 1px 5px black;
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+    padding-bottom: 20px;
+}
+
+.container {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    padding: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 50%
+    }
+
+    .landing {
+        width: 70%
+    }
+
+    .land {
+        font-size: 20px;
+    }
+}

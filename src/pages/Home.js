@@ -1,9 +1,11 @@
 import React from 'react';
-
+import classes from './Home.module.css'
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className={classes.container}>
+      <div className={classes.landing}>
+      <h1 className = {classes.land}>THIS IS HNG.</h1>
+    </div>
     </div>
   );
 }

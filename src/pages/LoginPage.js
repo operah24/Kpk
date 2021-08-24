@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Input from "../components/Input";
 import "../App.css";
-import { NavLink } from "react-router-dom";
-const LoginPage = () => {
+import { Redirect } from "react-router-dom";
+const LoginPage = (props) => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
+  const [loginsuccess, setLoginsuccess] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: value });
@@ -23,6 +24,9 @@ const LoginPage = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.status === "success") {
+          setLoginsuccess(true)
+        }       
       })
       .catch((err) => console.log(err));
   };
@@ -49,14 +53,8 @@ const LoginPage = () => {
             handleChange={handleChange}
             required="required"
           />
-          {inputs.email && inputs.password ? (
-            <NavLink to="/home">
-              <center>
-                <button type="submit" className="btn">
-                  Login
-                </button>
-              </center>
-            </NavLink>
+          {loginsuccess === true ? (
+             <Redirect to="/home" />
           ) : (
             <center>
               <button type="submit" className="btn">
